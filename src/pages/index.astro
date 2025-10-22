@@ -18,18 +18,16 @@ import { careerPath } from '../data/careerPath';
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
   </head>
   <body class="bg-white min-h-screen">
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 py-8 pb-16">
       <!-- Header Section -->
       <header class="text-center mb-12">
         <div class="inline-block mb-6">
-          <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-yoonet-blue to-yoonet-purple rounded-full flex items-center justify-center shadow-lg shadow-yoonet-blue/50">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
+          <div class="mx-auto mb-4 flex items-center justify-center">
+            <img src="/yoonet-logo.svg" alt="Yoonet Logo" class="h-24 w-auto" />
           </div>
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-bold font-dosis text-transparent bg-clip-text bg-gradient-to-r from-yoonet-blue via-yoonet-purple to-yoonet-magenta mb-4">
+        <h1 class="text-5xl md:text-7xl font-bold font-dosis mb-4 gradient-title">
           Ashley's Career Progression Proposal
         </h1>
 
@@ -96,10 +94,6 @@ import { careerPath } from '../data/careerPath';
       <!-- Final Call to Action -->
       <FinalCTA />
 
-      <!-- Footer -->
-      <footer class="text-center text-yoonet-dark text-sm font-lato py-8">
-        <p>Built with Astro + Tailwind CSS | Updated {new Date().toLocaleDateString()}</p>
-      </footer>
     </div>
 
     <style is:global>
@@ -124,6 +118,17 @@ import { careerPath } from '../data/careerPath';
       ::selection {
         color: #fff;
         background: #879bff;
+      }
+
+      /* Gradient text fix */
+      .gradient-title {
+        background: linear-gradient(to right, #879bff, #a36cf3, #e26cdf);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #879bff; /* Fallback color */
+        line-height: 1.2;
+        padding-bottom: 0.1em;
       }
 
       /* Yoonet custom scrollbar */
