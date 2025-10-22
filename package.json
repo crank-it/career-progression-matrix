@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx astro dev",
-    "build": "npx astro build",
+    "build": "node ./node_modules/astro/astro.js build",
     "preview": "npx astro preview"
   },
   "keywords": [],
