@@ -1,0 +1,148 @@
+---
+import SkillTree from '../components/SkillTree.astro';
+import VideoDistributionWorkflow from '../components/VideoDistributionWorkflow.astro';
+import CostComparison from '../components/CostComparison.astro';
+import PersonalLetter from '../components/PersonalLetter.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import { careerPath } from '../data/careerPath';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashley's Career Progression Proposal - Yoonet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-white min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+      <!-- Header Section -->
+      <header class="text-center mb-12">
+        <div class="inline-block mb-6">
+          <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-yoonet-blue to-yoonet-purple rounded-full flex items-center justify-center shadow-lg shadow-yoonet-blue/50">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-bold font-dosis text-transparent bg-clip-text bg-gradient-to-r from-yoonet-blue via-yoonet-purple to-yoonet-magenta mb-4">
+          Ashley's Career Progression Proposal
+        </h1>
+
+        <p class="text-xl text-yoonet-dark max-w-3xl mx-auto mb-6 font-lato">
+          A strategic investment in the progression of your latest staff member
+        </p>
+      </header>
+
+      <!-- Info Cards -->
+      <div class="grid md:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto">
+        <div class="bg-white border-2 border-yoonet-blue/30 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-yoonet-purple mb-3">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold font-dosis text-yoonet-darker mb-2">Maximize Your Investment</h3>
+          <p class="text-yoonet-dark text-sm font-lato">Transform your existing staff member into a strategic digital asset for your business</p>
+        </div>
+
+        <div class="bg-white border-2 border-yoonet-purple/30 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-yoonet-magenta mb-3">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold font-dosis text-yoonet-darker mb-2">Maximize ROI</h3>
+          <p class="text-yoonet-dark text-sm font-lato">Each skill level compounds, delivering exponential value well beyond your current investment</p>
+        </div>
+
+        <div class="bg-white border-2 border-yoonet-pink/30 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-yoonet-light-blue mb-3">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold font-dosis text-yoonet-darker mb-2">Timeline: 12-24 Months</h3>
+          <p class="text-yoonet-dark text-sm font-lato">Enjoy immediate ROI and secure high-level talent for your clinic through strategic upskilling</p>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <main class="bg-white rounded-2xl border-2 border-yoonet-blue/20 shadow-2xl p-8 mb-8">
+        <div class="mb-8">
+          <h2 class="text-3xl md:text-5xl font-bold font-dosis text-yoonet-purple mb-4">Ashley's Proposed Progression Path</h2>
+          <p class="text-yoonet-dark text-lg font-lato">
+            This strategic development plan transforms Ashley from an AutoCAD technician into a multi-skilled digital specialist.
+            Each progression level delivers measurable business value to your clinic while developing Ashley's career potential—creating a win-win outcome for both your practice and her professional growth.
+          </p>
+        </div>
+
+        <SkillTree skills={careerPath} />
+
+        <!-- Video Distribution Workflow -->
+        <VideoDistributionWorkflow />
+
+        <!-- Cost Comparison -->
+        <CostComparison />
+      </main>
+
+      <!-- Personal Letter -->
+      <PersonalLetter />
+
+      <!-- Final Call to Action -->
+      <FinalCTA />
+
+      <!-- Footer -->
+      <footer class="text-center text-yoonet-dark text-sm font-lato py-8">
+        <p>Built with Astro + Tailwind CSS | Updated {new Date().toLocaleDateString()}</p>
+      </footer>
+    </div>
+
+    <style is:global>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      ::selection {
+        color: #fff;
+        background: #879bff;
+      }
+
+      /* Yoonet custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #f5949f;
+        border-radius: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #879bff;
+      }
+    </style>
+  </body>
+</html>

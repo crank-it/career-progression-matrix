@@ -1,0 +1,269 @@
+---
+import type { Skill } from '../data/careerPath';
+
+interface Props {
+  skills: Skill[];
+}
+
+const { skills } = Astro.props;
+---
+
+<div class="skill-tree-container">
+  <div class="skill-tree">
+    {skills.map((skill, index) => (
+      <div class={`skill-node level-${skill.level} ${skill.completed ? 'completed' : 'locked'} ${skill.level === 0 ? 'current-status-node' : ''}`} id={skill.id}>
+        <div class="skill-card">
+          <div class="skill-header">
+            {skill.level > 0 && (
+              <div class="skill-level">Level {skill.level}</div>
+            )}
+            <h3 class="skill-title">{skill.title}</h3>
+          </div>
+
+          <p class="skill-description">{skill.description}</p>
+
+          <div class="skill-section">
+            <h4 class="section-title">Tools & Technologies</h4>
+            <div class="tools-grid">
+              {skill.tools.map(tool => (
+                <span class="tool-badge">{tool}</span>
+              ))}
+            </div>
+          </div>
+
+          <div class="skill-section">
+            <h4 class="section-title">Key Outcomes</h4>
+            <ul class="outcomes-list">
+              {skill.outcomes.map(outcome => (
+                <li>{outcome}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="skill-footer">
+            <div class="timeframe">
+              <svg class="timeframe-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              {skill.timeframe}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .skill-tree-container {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .skill-tree {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    .skill-tree {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .skill-node {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .current-status-node {
+    grid-column: 1 / -1;
+  }
+
+  .skill-card {
+    background: #ffffff;
+    border: 3px solid #879bff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(135, 155, 255, 0.2);
+    transition: all 0.3s ease;
+    height: 100%;
+  }
+
+  .skill-node.completed .skill-card {
+    border-color: #a36cf3;
+    box-shadow: 0 8px 32px rgba(163, 108, 243, 0.3);
+    background: linear-gradient(135deg, #ffffff 0%, #f9f7ff 100%);
+  }
+
+  .skill-node.locked .skill-card {
+    border-color: #6c7091;
+    opacity: 0.7;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 48px rgba(135, 155, 255, 0.4);
+  }
+
+  .skill-node.completed .skill-card:hover {
+    box-shadow: 0 12px 48px rgba(163, 108, 243, 0.5);
+  }
+
+  .skill-header {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgba(135, 155, 255, 0.3);
+    padding-bottom: 0.75rem;
+  }
+
+  .skill-level {
+    color: #879bff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-node.completed .skill-level {
+    color: #a36cf3;
+  }
+
+  .skill-title {
+    color: #4d5574;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Dosis', sans-serif;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .skill-description {
+    color: #6c7091;
+    font-size: 0.95rem;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .skill-section {
+    margin-bottom: 1.25rem;
+  }
+
+  .section-title {
+    color: #879bff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+
+  .tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tool-badge {
+    background: rgba(135, 155, 255, 0.15);
+    border: 1px solid rgba(135, 155, 255, 0.4);
+    color: #879bff;
+    padding: 0.375rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .outcomes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .outcomes-list li {
+    color: #6c7091;
+    font-size: 0.9rem;
+    font-family: 'Lato', sans-serif;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .outcomes-list li::before {
+    content: "▸";
+    color: #879bff;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+
+  .skill-node.completed .outcomes-list li::before {
+    content: "✓";
+    color: #a36cf3;
+  }
+
+  .skill-footer {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 2px solid rgba(135, 155, 255, 0.2);
+  }
+
+  .timeframe {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6c7091;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .timeframe-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #879bff;
+  }
+
+  .connection-line {
+    position: absolute;
+    right: -4rem;
+    top: 50%;
+    width: 4rem;
+    height: 4px;
+    background: linear-gradient(90deg, #879bff 0%, #6c7091 100%);
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+
+  .connection-line::before {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    border-right: 4px solid #6c7091;
+    border-top: 4px solid #6c7091;
+  }
+
+  .skill-node.completed .connection-line {
+    background: linear-gradient(90deg, #a36cf3 0%, #879bff 100%);
+  }
+
+  .skill-node.completed .connection-line::before {
+    border-right-color: #879bff;
+    border-top-color: #879bff;
+  }
+</style>
