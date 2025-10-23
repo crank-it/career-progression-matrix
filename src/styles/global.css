@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@source "../../src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}";
+
+@theme {
+  --color-yoonet-blue: #879bff;
+  --color-yoonet-pink: #f5949f;
+  --color-yoonet-light-blue: #71bbe3;
+  --color-yoonet-purple: #a36cf3;
+  --color-yoonet-magenta: #e26cdf;
+  --color-yoonet-dark: #6c7091;
+  --color-yoonet-darker: #4d5574;
+
+  --font-dosis: "Dosis Variable", "Dosis", sans-serif;
+  --font-lato: "Lato", sans-serif;
+}

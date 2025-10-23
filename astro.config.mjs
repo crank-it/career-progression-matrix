@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from "@tailwindcss/vite";
 import cloudflare from "@astrojs/cloudflare";
 import react from '@astrojs/react';
 
@@ -18,7 +18,7 @@ export default defineConfig({
   build: {
     assetsPrefix: pathName,
   },
-  integrations: [tailwind(), react()],
+  integrations: [react()],
 
   vite: {
     resolve: {
@@ -26,6 +26,9 @@ export default defineConfig({
         "react-dom/server": "react-dom/server.edge",
       } : undefined,
     },
+    plugins: [
+      tailwindcss()
+    ],
   }
 });
 
