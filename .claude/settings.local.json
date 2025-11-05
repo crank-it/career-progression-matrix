@@ -6,7 +6,11 @@
       "Bash(npm run build:*)",
       "Bash(git add:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\nFix Vercel build permission error by adding vercel.json config and using npx\n\n- Add vercel.json to specify build configuration for Vercel\n- Update package.json scripts to use npx for astro commands\n- This resolves the \"Permission denied\" error on Vercel builds (exit code 126)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npm install:*)",
+      "Bash(dir node_modulesjiti 2)",
+      "Bash(nul)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": []
