@@ -42,8 +42,8 @@ const assetsPrefix = import.meta.env.ASSETS_PREFIX || import.meta.env.BASE_URL |
 
       <!-- Info Cards -->
       <div class="grid md:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto">
-        <div class="bg-white border-2 border-yoonet-blue/30 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-          <div class="text-yoonet-purple mb-3">
+        <div class="bg-white border-2 border-yoonet-blue/30 rounded-xl p-6">
+          <div class="text-yoonet-blue mb-3">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
             </svg>
@@ -52,8 +52,8 @@ const assetsPrefix = import.meta.env.ASSETS_PREFIX || import.meta.env.BASE_URL |
           <p class="text-yoonet-dark text-sm font-lato">Transform your existing staff member into a strategic digital asset for your business</p>
         </div>
 
-        <div class="bg-white border-2 border-yoonet-purple/30 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-          <div class="text-yoonet-magenta mb-3">
+        <div class="bg-white border-2 border-yoonet-blue/30 rounded-xl p-6">
+          <div class="text-yoonet-blue mb-3">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
             </svg>
@@ -62,8 +62,8 @@ const assetsPrefix = import.meta.env.ASSETS_PREFIX || import.meta.env.BASE_URL |
           <p class="text-yoonet-dark text-sm font-lato">Each skill level compounds, delivering exponential value well beyond your current investment</p>
         </div>
 
-        <div class="bg-white border-2 border-yoonet-pink/30 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-          <div class="text-yoonet-light-blue mb-3">
+        <div class="bg-white border-2 border-yoonet-blue/30 rounded-xl p-6">
+          <div class="text-yoonet-blue mb-3">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
             </svg>
@@ -74,9 +74,9 @@ const assetsPrefix = import.meta.env.ASSETS_PREFIX || import.meta.env.BASE_URL |
       </div>
 
       <!-- Main Content -->
-      <main class="bg-white rounded-2xl border-2 border-yoonet-blue/20 shadow-2xl p-8 mb-8">
+      <main class="bg-white rounded-2xl border-2 border-yoonet-blue/20 p-8 mb-8">
         <div class="mb-8">
-          <h2 class="text-3xl md:text-5xl font-bold font-dosis text-yoonet-purple mb-4">Ashley's Proposed Progression Path</h2>
+          <h2 class="text-3xl md:text-5xl font-bold font-dosis text-yoonet-blue mb-4">Ashley's Proposed Progression Path</h2>
           <p class="text-yoonet-dark text-lg font-lato">
             This strategic development plan transforms Ashley from an AutoCAD technician into a multi-skilled digital specialist.
             Each progression level delivers measurable business value to your clinic while developing Ashley's career potential—creating a win-win outcome for both your practice and her professional growth.
@@ -124,13 +124,9 @@ const assetsPrefix = import.meta.env.ASSETS_PREFIX || import.meta.env.BASE_URL |
         background: #879bff;
       }
 
-      /* Gradient text fix */
+      /* Title styling */
       .gradient-title {
-        background: linear-gradient(to right, #879bff, #a36cf3, #e26cdf);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: #879bff; /* Fallback color */
+        color: #879bff;
         line-height: 1.2;
         padding-bottom: 0.1em;
       }
